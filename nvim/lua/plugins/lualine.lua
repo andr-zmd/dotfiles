@@ -1,4 +1,4 @@
-local dragon_colors = {
+local kdragon_colors = {
 	dragonBlack0 = "#0d0c0c",
 	dragonBlack1 = "#12120f",
 	dragonBlack2 = "#1D1C19",
@@ -29,14 +29,26 @@ local dragon_colors = {
 
 local kanagawa_dragon = {
 	normal = {
-		a = { bg = dragon_colors.dragonTeal, fg = dragon_colors.dragonBlack0 },
-		b = { bg = dragon_colors.dragonBlack4, fg = dragon_colors.dragonYellow },
-		c = { bg = dragon_colors.dragonBlack3, fg = dragon_colors.dragonYellow },
+		a = { bg = kdragon_colors.dragonTeal, fg = kdragon_colors.dragonBlack0 },
+		b = { bg = kdragon_colors.dragonBlack4, fg = kdragon_colors.dragonYellow },
+		c = { bg = kdragon_colors.transparent, fg = kdragon_colors.dragonYellow },
+	},
+	insert = {
+		a = { bg = kdragon_colors.dragonGreen, fg = kdragon_colors.dragonBlack0 },
+	},
+	visual = {
+		a = { bg = kdragon_colors.dragonYellow, fg = kdragon_colors.dragonBlack0 },
+	},
+	replace = {
+		a = { bg = kdragon_colors.dragonRed, fg = kdragon_colors.dragonBlack0 },
+	},
+	command = {
+		a = { bg = kdragon_colors.dragonOrange, fg = kdragon_colors.dragonBlack0 },
 	},
 	inactive = {
-		a = { bg = dragon_colors.dragonBlack3 },
-		b = { bg = dragon_colors.dragonBlack3 },
-		c = { bg = dragon_colors.dragonBlack3 },
+		a = { bg = kdragon_colors.transparent },
+		b = { bg = kdragon_colors.transparent },
+		c = { bg = kdragon_colors.transparent },
 	},
 }
 
