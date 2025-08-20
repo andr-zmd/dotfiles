@@ -1,14 +1,6 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-		-- refer to the configuration section below
-		preset = "modern",
-		delay = 0,
-		icons = { mappings = false },
-	},
 	keys = {
 		{
 			"<leader>?",
@@ -18,4 +10,15 @@ return {
 			desc = "Buffer Local Keymaps (which-key)",
 		},
 	},
+	config = function()
+		require("which-key").setup({
+
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+			preset = "modern",
+			delay = 0,
+			icons = { mappings = false },
+		})
+	end,
 }

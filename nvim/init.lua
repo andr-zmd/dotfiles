@@ -142,6 +142,8 @@ require("lazy").setup({
 		require("plugins.auto-session"),
 		-- Git Signs
 		require("plugins.gitsigns"),
+		-- Terminals
+		require("plugins.lazygit"),
 
 		-- User Interface
 

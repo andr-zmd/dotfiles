@@ -12,6 +12,7 @@ return {
 					DashboardCenter = { fg = "#c4b28a" },
 				}
 			end,
+			theme = "dragon",
 			colors = {
 				theme = {
 					all = {
@@ -22,17 +23,18 @@ return {
 								bg_border = "#181616",
 							},
 							pmenu = {
-								bg = "#282727",
-								bg_sel = "NONE",
+								bg = "none",
+								bg_sel = "none",
 								fg_sel = "#c4b28a",
 								bg_thumb = "#c4b28a",
-								bg_sbar = "NONE",
+								bg_sbar = "none",
 							},
 						},
 					},
 				},
 			},
 		})
+
 		vim.cmd("colorscheme kanagawa-dragon")
 	end,
 	lazy = false,

@@ -17,5 +17,8 @@ return {
 		vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = "Search Recent Files" })
 		vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "Find Existing Buffers" })
 		vim.keymap.set("n", "<leader>sc", builtin.current_buffer_fuzzy_find, { desc = "Search in Current Buffer" })
+
+		-- Highlight Groups
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { link = "FloatBorder" })
 	end,
 }
