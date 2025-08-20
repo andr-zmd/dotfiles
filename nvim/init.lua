@@ -1,27 +1,49 @@
 -- Options
 
+-- Leader Keys
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- Nerd Font
+vim.g.have_nerd_font = true
+
 -- Line Numbers
 vim.o.number = true
 vim.o.relativenumber = true
 
 -- Indentation
+vim.o.breakindent = true
 vim.o.expandtab = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 
--- UI
+-- Hide built-in mode
 vim.o.showmode = false
 
--- Functionalities
+-- Split windows to the right and bottom
+vim.o.splitright = true
+vim.o.splitbelow = true
+
+-- Save undo history
 vim.o.undofile = true
-vim.g.have_nerd_font = true
 
--- Leader Keys
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- Case-insensitive searching
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
+-- Update time
+vim.o.updatetime = 250
+
+-- Map sequence wait time
+vim.o.timeoutlen = 300
+
+-- Preview substitutions
+vim.o.inccommand = "split"
 -- Keymaps
+
+-- Clear highlights when searching
+vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>")
 
 -- Window Keymaps
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move focus to the left window" })
@@ -30,6 +52,13 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move focus to the upper window"
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move focus to the lower window" })
 
 -- Autocommands
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when copying",
+	callback = function()
+		vim.hl.on_yank()
+	end,
+})
 
 -- Lazy
 
@@ -52,7 +81,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plug-ins
 require("lazy").setup({
-
 	spec = {
 		-- Colorscheme
 		{
@@ -63,12 +91,36 @@ require("lazy").setup({
 						return {
 							StatusLine = { bg = "NONE" },
 							StatusLineNC = { bg = "NONE" },
+
+							-- Dashboard
+							DashboardHeader = { fg = "#c4b28a" },
+							DashboardCenter = { fg = "#c4b28a" },
 						}
 					end,
-					theme = "dragon",
+					colors = {
+						theme = {
+							all = {
+								ui = {
+									bg_gutter = "none",
+									float = {
+										bg = "#181616",
+										bg_border = "#181616",
+									},
+									pmenu = {
+										bg = "#282727",
+										bg_sel = "NONE",
+										fg_sel = "#c4b28a",
+										bg_thumb = "#c4b28a",
+										bg_sbar = "#181616",
+									},
+								},
+							},
+						},
+					},
 				})
 				vim.cmd("colorscheme kanagawa-dragon")
 			end,
+			lazy = false,
 			priority = 1000,
 		},
 
@@ -92,14 +144,23 @@ require("lazy").setup({
 		require("plugins.telescope"),
 		-- Better Syntax Highlighting, Editing, and Navigation
 		require("plugins.treesitter"),
-		-- Status Line
-		require("plugins.lualine"),
 		-- Autocompletion
 		require("plugins.blink"),
-		-- Which Key
-		require("plugins.which-key"),
 		-- Autopairing
 		require("plugins.autopairs"),
+		-- Sessions
+		require("plugins.auto-session"),
+
+		-- User Interface
+
+		-- Which Key
+		require("plugins.which-key"),
+		-- Status Line
+		require("plugins.lualine"),
+		-- Transparency
+		require("plugins.transparent"),
+		-- Dashboard
+		require("plugins.dashboard"),
 
 		-- Discord Presence
 		require("plugins.presence"),

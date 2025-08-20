@@ -7,10 +7,11 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
+		auto_clean_after_session_restore = true, -- Automatically clean up broken neo-tree buffers saved in sessions
 		close_if_last_window = true,
 	},
 	lazy = false,
 	keys = {
-		{ "<leader>ft", "<CMD>Neotree toggle<CR>", desc = "Open Filetree" },
+		{ "<leader>t", "<CMD>Neotree toggle<CR>", desc = "Open Filetree" },
 	},
 }

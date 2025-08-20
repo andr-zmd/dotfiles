@@ -59,6 +59,8 @@ return {
 			theme = kanagawa_dragon,
 			component_separators = "|",
 			section_separators = { left = "", right = "" }, -- Curved "scales"
+
+			disabled_filetypes = { "dashboard" },
 		},
 		sections = {
 			lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
