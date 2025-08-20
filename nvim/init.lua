@@ -60,6 +60,34 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- Diagnostic | :help vim.diagnostic.Opts
+vim.diagnostic.config({
+	severity_sort = true,
+	float = { border = "rounded", source = "if_many" },
+	underline = { severity = vim.diagnostic.severity.ERROR },
+	signs = vim.g.have_nerd_font and {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "󰅚 ",
+			[vim.diagnostic.severity.WARN] = "󰀪 ",
+			[vim.diagnostic.severity.INFO] = "󰋽 ",
+			[vim.diagnostic.severity.HINT] = "󰌶 ",
+		},
+	} or {},
+	virtual_text = {
+		source = "if_many",
+		spacing = 2,
+		format = function(diagnostic)
+			local diagnostic_message = {
+				[vim.diagnostic.severity.ERROR] = diagnostic.message,
+				[vim.diagnostic.severity.WARN] = diagnostic.message,
+				[vim.diagnostic.severity.INFO] = diagnostic.message,
+				[vim.diagnostic.severity.HINT] = diagnostic.message,
+			}
+			return diagnostic_message[diagnostic.severity]
+		end,
+	},
+})
+
 -- Lazy
 
 -- Bootstrap Lazy
@@ -83,46 +111,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		-- Colorscheme
-		{
-			"rebelot/kanagawa.nvim",
-			config = function()
-				require("kanagawa").setup({
-					overrides = function(colors)
-						return {
-							StatusLine = { bg = "NONE" },
-							StatusLineNC = { bg = "NONE" },
 
-							-- Dashboard
-							DashboardHeader = { fg = "#c4b28a" },
-							DashboardCenter = { fg = "#c4b28a" },
-						}
-					end,
-					colors = {
-						theme = {
-							all = {
-								ui = {
-									bg_gutter = "none",
-									float = {
-										bg = "#181616",
-										bg_border = "#181616",
-									},
-									pmenu = {
-										bg = "#282727",
-										bg_sel = "NONE",
-										fg_sel = "#c4b28a",
-										bg_thumb = "#c4b28a",
-										bg_sbar = "#181616",
-									},
-								},
-							},
-						},
-					},
-				})
-				vim.cmd("colorscheme kanagawa-dragon")
-			end,
-			lazy = false,
-			priority = 1000,
-		},
+		require("plugins.colorscheme.kanagawa"),
 
 		-- Lua LS Config
 		require("plugins.lazydev"),
@@ -150,6 +140,8 @@ require("lazy").setup({
 		require("plugins.autopairs"),
 		-- Sessions
 		require("plugins.auto-session"),
+		-- Git Signs
+		require("plugins.gitsigns"),
 
 		-- User Interface
 
@@ -161,6 +153,10 @@ require("lazy").setup({
 		require("plugins.transparent"),
 		-- Dashboard
 		require("plugins.dashboard"),
+		-- Smooth Scrolling
+		require("plugins.neoscroll"),
+		-- Smooth Cursor
+		require("plugins.smear-cursor"),
 
 		-- Discord Presence
 		require("plugins.presence"),
