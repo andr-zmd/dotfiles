@@ -12,6 +12,6 @@ return {
 	},
 	lazy = false,
 	keys = {
-		{ "<leader>tf", "<Cmd>Neotree toggle<Cr>", desc = "Toggle Filetree" },
+		{ "<leader>ot", "<Cmd>Neotree toggle<Cr>", desc = "[O]pen [T]ree" },
 	},
 }

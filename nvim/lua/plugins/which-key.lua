@@ -12,13 +12,27 @@ return {
 	},
 	config = function()
 		require("which-key").setup({
-
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
 			preset = "modern",
 			delay = 0,
-			icons = { mappings = false },
+
+			spec = {
+				{ "<leader>s", group = "[S]earch", icon = { icon = "", color = "green" } },
+				{ "<leader>t", group = "[T]oggle", icon = { icon = "", color = "green" } },
+				{ "<leader>o", group = "[O]pen", icon = { icon = "", color = "green" } },
+
+				-- Icon Setup
+				{ "<leader>og", icon = { icon = "", color = "orange" } },
+				{ "<leader>ot", icon = { icon = " ", color = "blue" } },
+			},
+
+			icons = {
+				group = "+",
+			},
 		})
+
+		-- Highlight groups
+		vim.api.nvim_set_hl(0, "WhichKeyNormal", { link = "WindowsNormal" })
+		vim.api.nvim_set_hl(0, "WhichKeyBorder", { link = "WindowsBorder" })
+		vim.api.nvim_set_hl(0, "WhichKeyTitle", { link = "WindowsTitle" })
 	end,
 }

@@ -11,14 +11,14 @@ return {
 	--- @module 'blink.cmp'
 	--- @type blink.cmp.Config
 	opts = {
-		keymap = { preset = "super-tab" },
+		keymap = { preset = "default" },
 
 		appearance = {
 			nerd_font_variant = "mono",
 		},
 
 		completion = {
-			ghost_text = { enabled = true },
+			documentation = { auto_show = true, auto_show_delay_ms = 500 },
 		},
 
 		sources = {
@@ -37,6 +37,4 @@ return {
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
-
-	opts_extend = { "sources.default" },
 }

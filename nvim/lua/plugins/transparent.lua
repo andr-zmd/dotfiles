@@ -31,18 +31,23 @@ return {
 			},
 			-- table: additional groups that should be cleared
 			extra_groups = {
-				"FloatTitle",
-				"NormalFloat",
-				"FloatBorder",
-
-				"TelescopeBorder",
+				"WindowsNormal",
+				"WindowsBorder",
+				"WindowsTitle",
 			},
 			-- table: groups you don't want to clear
+			exclude_groups = {},
 			-- function: code to be executed after highlight groups are cleared
 			-- Also the user event "TransparentClear" will be triggered
 			on_clear = function() end,
 		})
 
-		vim.keymap.set("n", "<leader>tt", "<Cmd>TransparentToggle<CR>", { desc = "Toggle Transparency" })
+		vim.keymap.set("n", "<leader>tt", function()
+			vim.cmd(":TransparentToggle")
+			-- Fix Transparency for Kanagawa-dragon
+			if vim.g.colors_name == "kanagawa" then
+				vim.cmd(":colorscheme kanagawa-dragon")
+			end
+		end, { desc = "[T]oggle [T]ransparency" })
 	end,
 }

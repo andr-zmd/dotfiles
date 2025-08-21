@@ -19,11 +19,11 @@ return {
 						ui = {
 							bg_gutter = "none",
 							float = {
-								bg = "#181616",
-								bg_border = "#181616",
+								bg = "#282727",
+								bg_border = "#282727",
 							},
 							pmenu = {
-								bg = "none",
+								bg = "#282727",
 								bg_sel = "none",
 								fg_sel = "#c4b28a",
 								bg_thumb = "#c4b28a",
@@ -34,6 +34,11 @@ return {
 				},
 			},
 		})
+
+		-- Custom highlight groups
+		vim.api.nvim_set_hl(0, "WindowsNormal", { bg = "#181616" })
+		vim.api.nvim_set_hl(0, "WindowsBorder", { bg = "#181616", fg = "#54546D" })
+		vim.api.nvim_set_hl(0, "WindowsTitle", { bg = "#181616", fg = "#7a8382" })
 
 		vim.cmd("colorscheme kanagawa-dragon")
 	end,

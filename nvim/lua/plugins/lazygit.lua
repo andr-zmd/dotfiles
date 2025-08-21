@@ -15,10 +15,10 @@ return {
 	-- setting the keybinding for LazyGit with 'keys' is recommended in
 	-- order to load the plugin when the command is run for the first time
 	keys = {
-		{ "<leader>tg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+		{ "<leader>og", "<Cmd>LazyGit<CR>", desc = "[O]pen [G]it" },
 	},
 	config = function()
-		vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "FloatBorder" })
-		vim.api.nvim_set_hl(0, "LazyGitFloat", { link = "Identifier" })
+		vim.api.nvim_set_hl(0, "LazyGitFloat", { link = "WindowsNormal" })
+		vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "WindowsBorder" })
 	end,
 }
