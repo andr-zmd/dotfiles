@@ -1,5 +1,6 @@
 return {
 	"xiyaowong/transparent.nvim",
+	lazy = false,
 	config = function()
 		require("transparent").setup({
 			groups = {
@@ -31,9 +32,19 @@ return {
 			},
 			-- table: additional groups that should be cleared
 			extra_groups = {
-				"WindowsNormal",
-				"WindowsBorder",
-				"WindowsTitle",
+				-- Telescope
+				"TelescopeNormal",
+				"TelescopeBorder",
+
+				-- WhichKey
+				"WhichKeyNormal",
+				"WhichKeyBorder",
+				"WhichKeyTitle",
+
+				-- Tabline
+				"TabLineFill",
+				"TabLine",
+				"TabLineSel",
 			},
 			-- table: groups you don't want to clear
 			exclude_groups = {},

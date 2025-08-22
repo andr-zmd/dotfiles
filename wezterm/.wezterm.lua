@@ -34,13 +34,14 @@ config.colors = {
 }
 
 -- Windows
-config.window_decorations = "RESIZE|INTEGRATED_BUTTONS"
+config.window_decorations = "RESIZE|INTEGRATED_BUTTONS" -- RESIZE|INTEGRATED_BUTTONS
 config.window_background_opacity = 0.9
 config.window_padding = {
 	top = 15,
 }
 
 -- Tabs
+config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 config.tab_max_width = 32
 

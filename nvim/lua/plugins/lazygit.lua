@@ -18,7 +18,6 @@ return {
 		{ "<leader>og", "<Cmd>LazyGit<CR>", desc = "[O]pen [G]it" },
 	},
 	config = function()
-		vim.api.nvim_set_hl(0, "LazyGitFloat", { link = "WindowsNormal" })
-		vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "WindowsBorder" })
+		vim.api.nvim_set_hl(0, "LazyGitBorder", { link = "FloatBorder" })
 	end,
 }

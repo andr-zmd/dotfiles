@@ -29,10 +29,5 @@ return {
 				group = "+",
 			},
 		})
-
-		-- Highlight groups
-		vim.api.nvim_set_hl(0, "WhichKeyNormal", { link = "WindowsNormal" })
-		vim.api.nvim_set_hl(0, "WhichKeyBorder", { link = "WindowsBorder" })
-		vim.api.nvim_set_hl(0, "WhichKeyTitle", { link = "WindowsTitle" })
 	end,
 }

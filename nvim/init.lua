@@ -159,6 +159,10 @@ require("lazy").setup({
 		require("plugins.neoscroll"),
 		-- Smooth Cursor
 		require("plugins.smear-cursor"),
+		-- Indent Lines
+		require("plugins.indent-blankline"),
+		-- UI Tweaks
+		require("plugins.noice"),
 
 		-- Discord Presence
 		require("plugins.presence"),

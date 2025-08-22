@@ -10,7 +10,8 @@ return {
 				-- LSP
 				"lua-language-server",
 				"typescript-language-server",
-
+				"pyright",
+				"jdtls",
 				-- DAP
 
 				-- Linters
