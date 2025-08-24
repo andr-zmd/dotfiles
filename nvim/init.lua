@@ -1,9 +1,5 @@
 -- Options
 
--- Leader Keys
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- Nerd Font
 vim.g.have_nerd_font = true
 
@@ -18,7 +14,7 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 
--- Hide built-in mode
+-- Hide built-in mode (Normal, Insert, Visual, Command, Replace)
 vim.o.showmode = false
 
 -- Split windows to the right and bottom
@@ -41,6 +37,7 @@ vim.o.timeoutlen = 300
 -- Preview substitutions
 vim.o.inccommand = "split"
 
+-- Concealed Text
 vim.o.conceallevel = 1
 
 -- Keymaps
@@ -56,6 +53,7 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move focus to the lower window"
 
 -- Autocommands
 
+-- Highlight Copied Words
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when copying",
 	callback = function()
@@ -63,7 +61,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- Diagnostic | :help vim.diagnostic.Opts
+-- Diagnostic Configuration | :help vim.diagnostic.Opts
 vim.diagnostic.config({
 	severity_sort = true,
 	float = { border = "rounded", source = "if_many" },
@@ -110,72 +108,17 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Plug-ins
+-- Map Leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
-		-- Colorscheme
-
-		require("plugins.colorscheme.kanagawa"),
-		require("plugins.colorscheme.nord"),
-
-		-- LSP, DAP, Linters, Formatters
-
-		-- Mason Installer
-		require("plugins.mason"),
-		-- LSP
-		require("plugins.lsp"),
-		-- Formatter
-		require("plugins.conform"),
-
-		-- Lua LS Config
-		require("plugins.lazydev"),
-
-		-- Functionalities
-
-		-- Filetree
-		require("plugins.neotree"),
-		-- Fuzzy Finder
-		require("plugins.telescope"),
-		-- Better Syntax Highlighting, Editing, and Navigation
-		require("plugins.treesitter"),
-		-- Autocompletion
-		require("plugins.blink"),
-		-- Autopairing
-		require("plugins.autopairs"),
-		-- Sessions
-		require("plugins.auto-session"),
-		-- Terminals
-		require("plugins.lazygit"),
-		-- Obsidian
-		require("plugins.obsidian"),
-		-- Discord Presence
-		require("plugins.presence"),
-
-		-- User Interface
-
-		-- Which Key
-		require("plugins.which-key"),
-		-- Status Line
-		require("plugins.lualine"),
-		-- Transparency
-		require("plugins.transparent"),
-		-- Dashboard
-		require("plugins.dashboard"),
-		-- Smooth Scrolling
-		require("plugins.neoscroll"),
-		-- Smooth Cursor
-		require("plugins.smear-cursor"),
-		-- Indent Lines
-		require("plugins.indent-blankline"),
-		-- Notifications Tweaks
-		require("plugins.noice"),
-		-- Git Signs
-		require("plugins.gitsigns"),
-
-		-- Language Extensions
-
-		-- Java Extension for JDTLS
-		require("plugins.language.jdtls"),
+		-- Plugins
+		{ import = "plugins" },
+		-- Colorschemes
+		{ import = "plugins.colorscheme" },
 	},
 	-- automatically check for plugin updates
 	checker = { enabled = true },
