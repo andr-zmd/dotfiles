@@ -40,6 +40,9 @@ vim.o.timeoutlen = 300
 
 -- Preview substitutions
 vim.o.inccommand = "split"
+
+vim.o.conceallevel = 1
+
 -- Keymaps
 
 -- Clear highlights when searching
@@ -113,9 +116,7 @@ require("lazy").setup({
 		-- Colorscheme
 
 		require("plugins.colorscheme.kanagawa"),
-
-		-- Lua LS Config
-		require("plugins.lazydev"),
+		require("plugins.colorscheme.nord"),
 
 		-- LSP, DAP, Linters, Formatters
 
@@ -125,6 +126,9 @@ require("lazy").setup({
 		require("plugins.lsp"),
 		-- Formatter
 		require("plugins.conform"),
+
+		-- Lua LS Config
+		require("plugins.lazydev"),
 
 		-- Functionalities
 
@@ -140,10 +144,12 @@ require("lazy").setup({
 		require("plugins.autopairs"),
 		-- Sessions
 		require("plugins.auto-session"),
-		-- Git Signs
-		require("plugins.gitsigns"),
 		-- Terminals
 		require("plugins.lazygit"),
+		-- Obsidian
+		require("plugins.obsidian"),
+		-- Discord Presence
+		require("plugins.presence"),
 
 		-- User Interface
 
@@ -161,11 +167,15 @@ require("lazy").setup({
 		require("plugins.smear-cursor"),
 		-- Indent Lines
 		require("plugins.indent-blankline"),
-		-- UI Tweaks
+		-- Notifications Tweaks
 		require("plugins.noice"),
+		-- Git Signs
+		require("plugins.gitsigns"),
 
-		-- Discord Presence
-		require("plugins.presence"),
+		-- Language Extensions
+
+		-- Java Extension for JDTLS
+		require("plugins.language.jdtls"),
 	},
 	-- automatically check for plugin updates
 	checker = { enabled = true },

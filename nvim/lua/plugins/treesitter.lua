@@ -5,7 +5,7 @@ return {
 	build = ":TSUpdate",
 	main = "nvim-treesitter.configs",
 	opts = {
-		ensure_installed = { "lua", "javascript" },
+		ensure_installed = { "lua", "javascript", "regex", "vim", "bash", "markdown", "markdown_inline" },
 
 		auto_install = true,
 

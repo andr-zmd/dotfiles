@@ -32,19 +32,14 @@ return {
 			},
 			-- table: additional groups that should be cleared
 			extra_groups = {
-				-- Telescope
-				"TelescopeNormal",
-				"TelescopeBorder",
+				-- Float
+				"NormalFloat",
+				"FloatBorder",
+				"FloatTitle",
 
-				-- WhichKey
-				"WhichKeyNormal",
-				"WhichKeyBorder",
-				"WhichKeyTitle",
-
-				-- Tabline
-				"TabLineFill",
-				"TabLine",
-				"TabLineSel",
+				-- PopOutMenu
+				"Pmenu",
+				"PmenuBorder",
 			},
 			-- table: groups you don't want to clear
 			exclude_groups = {},
@@ -58,6 +53,14 @@ return {
 			-- Fix Transparency for Kanagawa-dragon
 			if vim.g.colors_name == "kanagawa" then
 				vim.cmd(":colorscheme kanagawa-dragon")
+
+				vim.api.nvim_set_hl(0, "TelescopeNormal", { link = "NormalFloat" })
+				vim.api.nvim_set_hl(0, "TelescopeBorder", { link = "FloatBorder" })
+
+				vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { link = "FloatBorder" })
+
+				vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { link = "FloatBorder" })
+				vim.api.nvim_set_hl(0, "NotifyINFOBorder", { link = "FloatBorder" })
 			end
 		end, { desc = "[T]oggle [T]ransparency" })
 	end,

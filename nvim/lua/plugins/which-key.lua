@@ -10,24 +10,22 @@ return {
 			desc = "Buffer Local Keymaps (which-key)",
 		},
 	},
-	config = function()
-		require("which-key").setup({
-			preset = "modern",
-			delay = 0,
+	opts = {
+		preset = "modern",
+		delay = 0,
 
-			spec = {
-				{ "<leader>s", group = "[S]earch", icon = { icon = "", color = "green" } },
-				{ "<leader>t", group = "[T]oggle", icon = { icon = "", color = "green" } },
-				{ "<leader>o", group = "[O]pen", icon = { icon = "", color = "green" } },
+		spec = {
+			{ "<leader>s", group = "[S]earch", icon = { icon = "", color = "green" } },
+			{ "<leader>t", group = "[T]oggle", icon = { icon = "", color = "green" } },
+			{ "<leader>o", group = "[O]pen", icon = { icon = "", color = "green" } },
 
-				-- Icon Setup
-				{ "<leader>og", icon = { icon = "", color = "orange" } },
-				{ "<leader>ot", icon = { icon = " ", color = "blue" } },
-			},
+			-- Icon Setup
+			{ "<leader>og", icon = { icon = "", color = "orange" } },
+			{ "<leader>ot", icon = { icon = " ", color = "blue" } },
+		},
 
-			icons = {
-				group = "+",
-			},
-		})
-	end,
+		icons = {
+			group = "+",
+		},
+	},
 }

@@ -11,9 +11,6 @@ return {
 					DashboardHeader = { fg = "#c4b28a" },
 					DashboardCenter = { fg = "#c4b28a" },
 
-					-- Float
-					FloatTitle = { bg = "none" },
-
 					-- TabLine
 					TabLine = { bg = "none" },
 				}
@@ -30,16 +27,17 @@ return {
 							},
 							pmenu = {
 								bg = "#181616",
-								bg_sel = "#c4b28a",
-								fg_sel = "#181616",
-								bg_thumb = "#c4b28a",
-								bg_sbar = "#181616",
+								bg_thumb = "#54546d",
+								bg_sel = "none",
+								fg_sel = "#c4b28a",
+								bg_sbar = "none",
 							},
 						},
 					},
 				},
 			},
 		})
+
 		vim.cmd("colorscheme kanagawa-dragon")
 	end,
 	lazy = false,

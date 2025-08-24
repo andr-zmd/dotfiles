@@ -38,7 +38,8 @@ return {
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
 
-		-- Highlight Groups Fix
+		-- Highlight Groups
 		vim.api.nvim_set_hl(0, "TelescopeNormal", { link = "NormalFloat" })
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { link = "FloatBorder" })
 	end,
 }
