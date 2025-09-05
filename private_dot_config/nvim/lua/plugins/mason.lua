@@ -15,6 +15,7 @@ return {
 				-- DAP
 
 				-- Linters
+				"eslint-lsp",
 
 				-- Formatters
 				"stylua",
