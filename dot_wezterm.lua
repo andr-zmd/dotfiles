@@ -18,8 +18,6 @@ config.window_background_opacity = theme.opacity
 
 config.use_fancy_tab_bar = false
 
-config.window_decorations = "RESIZE | INTEGRATED_BUTTONS"
-
 config.colors = {
 	tab_bar = {
 		background = theme.bg_color,
@@ -42,6 +40,7 @@ config.colors = {
 if getOS() == "Windows" then
 	-- Window Configs
 	config.default_prog = { "powershell.exe" }
+	config.window_decorations = "RESIZE | INTEGRATED_BUTTONS"
 else
 	-- Linux Configs
 end
