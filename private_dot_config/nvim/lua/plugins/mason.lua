@@ -13,6 +13,7 @@ return {
 				"pyright",
 				"jdtls",
 				-- DAP
+				"java-debug-adapter",
 
 				-- Linters
 				"eslint-lsp",

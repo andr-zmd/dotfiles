@@ -1,6 +1,16 @@
 return {
-	"neovim/nvim-lspconfig",
+	"mason-org/mason-lspconfig.nvim",
 	dependencies = {
-		{ "mason-org/mason-lspconfig.nvim", opts = { automatic_enable = { exclude = { "jdtls" } } } },
+		{ "mason-org/mason.nvim", opts = {} },
+		"neovim/nvim-lspconfig",
 	},
+	config = function()
+		require("mason-lspconfig").setup({
+			automatic_enable = {
+				exclude = {
+					"jdtls",
+				},
+			},
+		})
+	end,
 }

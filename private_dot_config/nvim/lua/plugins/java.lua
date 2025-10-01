@@ -1,43 +1,28 @@
 return {
 	"mfussenegger/nvim-jdtls",
-	ft = "java",
+	dependencies = {
+		"mfussenegger/nvim-dap",
+	},
 	config = function()
-		--  Java Lsp
 		vim.lsp.config("jdtls", {
-			name = "jdtls",
+			root_dir = vim.fs.root(0, { "pom.xml" }),
 
-			-- `cmd` defines the executable to launch eclipse.jdt.ls.
-			-- `jdtls` must be available in $PATH and you must have Python3.9 for this to work.
-			--
-			-- As alternative you could also avoid the `jdtls` wrapper and launch
-			-- eclipse.jdt.ls via the `java` executable
-			-- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
-			cmd = { "jdtls" },
-
-			-- `root_dir` must point to the root of your project.
-			-- See `:help vim.fs.root`
-			root_dir = vim.fs.root(0, { "gradlew", ".git", "mvnw", ".mvn" }),
-
-			-- Here you can configure eclipse.jdt.ls specific settings
-			-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
-			-- for a list of options
 			settings = {
-				java = {},
+				java = {
+					-- Custom eclipse.jdt.ls options go here
+				},
 			},
 
-			-- This sets the `initializationOptions` sent to the language server
-			-- If you plan on using additional eclipse.jdt.ls plugins like java-debug
-			-- you'll need to set the `bundles`
-			--
-			-- See https://codeberg.org/mfussenegger/nvim-jdtls#java-debug-installation
-			--
-			-- If you don't plan on any eclipse.jdt.ls plugins you can remove this
 			init_options = {
-				bundles = {},
+				bundles = {
+					vim.fn.glob(
+						"~/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin-*.jar",
+						true
+					),
+				},
 			},
 		})
-		vim.lsp.enable("jdtls")
 
-		-- Keymaps
+		vim.lsp.enable("jdtls")
 	end,
 }
