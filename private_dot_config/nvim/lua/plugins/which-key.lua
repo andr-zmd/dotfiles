@@ -23,6 +23,7 @@ return {
 			-- Icon Setup
 			{ "<leader>og", icon = { icon = "", color = "orange" } },
 			{ "<leader>ot", icon = { icon = " ", color = "blue" } },
+			{ "<leader>b", icon = { icon = "", color = "red" } },
 		},
 
 		icons = {

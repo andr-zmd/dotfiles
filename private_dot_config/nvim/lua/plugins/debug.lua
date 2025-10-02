@@ -46,9 +46,34 @@ return {
 		end, { desc = "Debug: Step Out" })
 		vim.keymap.set("n", "<Leader>b", function()
 			require("dap").toggle_breakpoint()
-		end, { desc = "Debug: Toggle Breakpoint" })
-		vim.keymap.set("n", "<Leader>B", function()
-			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
-		end, { desc = "Debug: Set Breakpoint" })
+		end, { desc = "[B]eakpoint" })
+		-- vim.keymap.set("n", "<Leader>B", function()
+		-- 	require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+		-- end, { desc = "Debug: Set Breakpoint" })
+
+		-- Sign Config
+		-- dap.txt SIGNS CONFIG
+		vim.api.nvim_set_hl(0, "DapBreak", { fg = "#c4746e" })
+		vim.api.nvim_set_hl(0, "DapStop", { fg = "#b6927b" })
+		local breakpoint_icons = vim.g.have_nerd_font
+				and {
+					Breakpoint = "",
+					BreakpointCondition = "",
+					BreakpointRejected = "",
+					LogPoint = "",
+					Stopped = "",
+				}
+			or {
+				Breakpoint = "●",
+				BreakpointCondition = "⊜",
+				BreakpointRejected = "⊘",
+				LogPoint = "◆",
+				Stopped = "⭔",
+			}
+		for type, icon in pairs(breakpoint_icons) do
+			local tp = "Dap" .. type
+			local hl = (type == "Stopped") and "DapStop" or "DapBreak"
+			vim.fn.sign_define(tp, { text = icon, texthl = hl, numhl = hl })
+		end
 	end,
 }

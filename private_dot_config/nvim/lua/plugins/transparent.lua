@@ -62,6 +62,6 @@ return {
 				vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { link = "FloatBorder" })
 				vim.api.nvim_set_hl(0, "NotifyINFOBorder", { link = "FloatBorder" })
 			end
-		end, { desc = "Transparency" })
+		end, { desc = "Toggle Transparency" })
 	end,
 }
