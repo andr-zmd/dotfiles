@@ -48,7 +48,7 @@ return {
 			on_clear = function() end,
 		})
 
-		vim.keymap.set("n", "<leader>tt", function()
+		vim.keymap.set("n", "<leader>pt", function()
 			vim.cmd(":TransparentToggle")
 			-- Fix Transparency for Kanagawa-dragon
 			if vim.g.colors_name == "kanagawa" then
@@ -62,6 +62,6 @@ return {
 				vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { link = "FloatBorder" })
 				vim.api.nvim_set_hl(0, "NotifyINFOBorder", { link = "FloatBorder" })
 			end
-		end, { desc = "[T]oggle [T]ransparency" })
+		end, { desc = "Transparency" })
 	end,
 }

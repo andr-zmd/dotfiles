@@ -16,8 +16,9 @@ return {
 
 		spec = {
 			{ "<leader>s", group = "[S]earch", icon = { icon = "", color = "green" } },
-			{ "<leader>t", group = "[T]oggle", icon = { icon = "", color = "green" } },
+			{ "<leader>t", group = "[T]esting", icon = { icon = "", color = "green" } },
 			{ "<leader>o", group = "[O]pen", icon = { icon = "", color = "green" } },
+			{ "<leader>p", group = "[P]references", icon = { icon = "", color = "green" } },
 
 			-- Icon Setup
 			{ "<leader>og", icon = { icon = "", color = "orange" } },
