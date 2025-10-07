@@ -1,5 +1,9 @@
 -- Options
 
+-- Map Leader
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 -- Nerd Font
 vim.g.have_nerd_font = true
 
@@ -89,6 +93,8 @@ vim.diagnostic.config({
 	},
 })
 
+vim.keymap.set("n", "<Leader>od", vim.diagnostic.open_float, { desc = "Open Float [D]iagnostic" })
+
 -- Lazy
 
 -- Bootstrap Lazy
@@ -107,10 +113,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 vim.opt.rtp:prepend(lazypath)
-
--- Map Leader
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
