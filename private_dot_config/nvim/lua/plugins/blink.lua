@@ -8,6 +8,9 @@ return {
 			"rafamadriz/friendly-snippets",
 			lazy = true,
 		},
+		{
+			"giuxtaposition/blink-cmp-copilot",
+		},
 	},
 
 	-- use a release tag to download pre-built binaries
@@ -58,13 +61,19 @@ return {
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			-- add lazydev to your completion providers
-			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+			default = { "copilot", "lazydev", "lsp", "path", "snippets", "buffer" },
 			providers = {
 				lazydev = {
 					name = "LazyDev",
 					module = "lazydev.integrations.blink",
 					-- make lazydev completions top priority (see `:h blink.cmp`)
 					score_offset = 100,
+				},
+				copilot = {
+					name = "copilot",
+					module = "blink-cmp-copilot",
+					score_offset = 100,
+					async = true,
 				},
 			},
 		},
