@@ -19,6 +19,8 @@ return {
 			{ "<leader>t", group = "[T]esting", icon = { icon = "", color = "green" } },
 			{ "<leader>o", group = "[O]pen", icon = { icon = "", color = "green" } },
 			{ "<leader>p", group = "[P]references", icon = { icon = "", color = "green" } },
+			{ "<leader>c", group = "[C]ode Actions", icon = { icon = "", color = "green" } },
+			{ "<leader>cj", group = "[J]ava", icon = { icon = "", color = "green" } },
 
 			-- Icon Setup
 			{ "<leader>og", icon = { icon = "", color = "orange" } },

@@ -9,11 +9,10 @@ return {
 		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[H]elp" })
 		vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[K]eymaps" })
 		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[F]iles" })
-		vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]elect Telescope" })
+		vim.keymap.set("n", "<leader>st", builtin.builtin, { desc = "Select [T]elescope" })
 		vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[W]ord" })
 		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Using [G]rep" })
 		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[D]iagnostics" })
-		vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[R]esume" })
 		vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[.] Recent Files ("." for repeat)' })
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 

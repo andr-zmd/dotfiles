@@ -28,6 +28,9 @@ vim.o.splitbelow = true
 -- Save undo history
 vim.o.undofile = true
 
+-- Spell Checking
+vim.o.spell = true
+
 -- Case-insensitive searching
 vim.o.ignorecase = true
 vim.o.smartcase = true

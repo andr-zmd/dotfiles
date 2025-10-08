@@ -1,5 +1,6 @@
 return {
 	"mfussenegger/nvim-jdtls",
+	ft = "java",
 	dependencies = {
 		"mfussenegger/nvim-dap",
 	},
@@ -28,5 +29,12 @@ return {
 		vim.lsp.enable("jdtls")
 
 		-- Keymaps
+		vim.keymap.set("n", "<leader>cjo", require("jdtls").organize_imports, { desc = "[O]rganize Imports" })
+		vim.keymap.set("n", "<leader>cjv", require("jdtls").extract_variable, { desc = "Extract [V]ariable" })
+		vim.keymap.set("n", "<leader>cjV", require("jdtls").extract_variable_all, { desc = "Extract [V]ariable All" })
+		vim.keymap.set("n", "<leader>cjc", require("jdtls").extract_constant, { desc = "Extract [C]onstant" })
+		vim.keymap.set("n", "<leader>cjm", require("jdtls").extract_method, { desc = "Extract [M]ethod" })
+
+		vim.keymap.set("n", "<leader>cjg", require("jdtls.tests").generate, { desc = "[G]enerate Tests" })
 	end,
 }
