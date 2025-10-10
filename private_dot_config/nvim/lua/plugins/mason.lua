@@ -12,8 +12,12 @@ return {
 				"typescript-language-server",
 				"pyright",
 				"jdtls",
+				"clangd",
+				"bash-language-server",
+
 				-- DAP
 				"java-debug-adapter",
+				"cpptools",
 
 				-- Linters
 				"eslint-lsp",
@@ -21,6 +25,7 @@ return {
 				-- Formatters
 				"stylua",
 				"prettierd",
+				"shfmt",
 			},
 		})
 	end,
