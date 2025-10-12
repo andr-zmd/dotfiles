@@ -11,6 +11,7 @@ PS1='[\u@\h \W]\$ '
 
 eval "$(ssh-agent -s)"
 ssh-add -q ~/.ssh/id_ed25519_personal_github
+ssh-add -q ~/.ssh/id_ed25519_school_github
 
 # Zoxide
 eval "$(zoxide init bash)"
