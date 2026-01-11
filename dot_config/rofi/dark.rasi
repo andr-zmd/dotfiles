@@ -1,0 +1,76 @@
+* {
+    font: "JetBrains Mono 12";
+
+    window-width: 600px;
+    window-height: 530px;
+
+    background-color: rgba(0, 0, 0, 1);
+    text-color: rgba(255, 255, 255, 1);
+
+    border-color: rgba(49, 49, 52, 1);
+}
+
+window {
+    width: @window-width;
+    height: @window-height;
+
+    border-radius: 10px;
+
+    children: [mainbox];
+    background-color: transparent;
+}
+
+mainbox {
+    orientation: horizontal;
+    background-color: transparent;
+
+    padding: 10px;
+
+    children: [box];
+}
+
+box {
+    orientation: vertical;
+
+    padding: 5px;
+    border: 2px;
+    border-radius: 10px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    spacing: 5px;
+
+    children: [listview, entry];
+}
+
+listview {
+    expand: true;
+    reverse: true;
+    spacing: 5px;
+
+    background-color: transparent;
+}
+
+element {
+    cursor: pointer;
+
+    padding: 5px;
+    spacing: 10px;
+    border: 2px;
+    border-radius: 5px;
+
+    children: [element-icon, element-text];
+}
+
+element-icon {
+    size: 32;
+}
+
+entry {
+    expand: false;
+    placeholder: "What are you feeling?";
+
+    padding: 5px;
+    border: 2px;
+    border-radius: 5px;
+}
+
