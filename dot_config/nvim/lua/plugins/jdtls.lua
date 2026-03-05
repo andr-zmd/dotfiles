@@ -3,8 +3,6 @@ return {
 	ft = "java",
 	config = function()
 		local function setup_jdtls()
-			local jdtls = require("jdtls")
-
 			local bundles = {
 				vim.fn.glob(
 					"~/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin-*.jar",
@@ -14,8 +12,6 @@ return {
 			vim.list_extend(bundles, vim.fn.glob("~/.local/share/nvim/mason/share/java-test/*.jar", true, true))
 
 			local config = {
-				cmd = { "jdtls" }, -- Or the full path to the mason bin
-				root_dir = jdtls.setup.find_root({ ".git", "mvnw", "gradlew" }),
 				init_options = {
 					bundles = bundles,
 				},
@@ -26,7 +22,8 @@ return {
 				},
 			}
 
-			jdtls.start_or_attach(config)
+			vim.lsp.config("jdtls", config)
+			vim.lsp.enable("jdtls")
 		end
 
 		setup_jdtls()
