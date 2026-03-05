@@ -1,0 +1,45 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: rgb(235, 219, 178);
+}
+
+
+#workspaces button {
+    padding: 7px 12px 7px 12px;
+    margin: 0 5px 0 0;
+    border-radius: 999px;
+    color: rgb(235, 219, 178);
+
+    background-color: rgb(40, 40, 40);
+    border: 2px solid rgb(235, 219, 178);
+
+    transition: padding 0.2s ease-in
+}
+
+#workspaces button.active {
+    padding: 7px 20px 7px 20px;
+}
+
+.modules-center {
+    background-color: rgb(40, 40, 40);
+    padding: 7px 14px 7px 14px;
+    border: 2px solid rgb(235, 219, 178);
+
+    border-radius: 999px;
+}
+
+.modules-right {
+    background-color: rgb(40, 40, 40);
+    padding: 7px 14px 7px 14px;
+    border: 2px solid rgb(235, 219, 178);
+
+    border-radius: 999px;
+}
